@@ -29,7 +29,8 @@ class App extends React.Component {
     super();
     this.state = { lat: null, error: "" };
   }
-  render() {
+
+  renderContent() {
     if (this.state.lat && !this.state.error) {
       return (
         <div>
@@ -47,6 +48,9 @@ class App extends React.Component {
         </div>
       );
     }
+  }
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
